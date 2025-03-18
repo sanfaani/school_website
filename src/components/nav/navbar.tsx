@@ -1,17 +1,15 @@
-import Contact from "./contact";
-import DecorativeStrip from "./decorativeStrip";
-import LatestNews from "./LatestNews";
-import NavItem from "./NavItem";
+import TopBar from "./TopBar";
+import NewsTicker from "./NewsTicker";
+import MainNavbar from "./MainNavbar";
 
 export default function Navbar() {
   return (
-    <div>
-      <div className="fixed top-0 left-0 w-full shadow-lg z-50">
-        <LatestNews />
-        <DecorativeStrip />
-        <Contact />
-        <NavItem />
-      </div>
-    </div>
+    <>
+    <header className="relative w-full">
+      <NewsTicker />
+      <TopBar />
+      <MainNavbar />
+    </header>
+    </>
   );
 }
