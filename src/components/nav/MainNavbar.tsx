@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import Link from "next/link";
 import { MdPhone, MdMenu, MdClose } from "react-icons/md";
@@ -15,27 +16,32 @@ export default function MainNavbar() {
 
       {/* Navbar Container (Pushed below NewsTicker) */}
       <nav className="bg-white shadow-md fixed top-[65px] w-full z-[50]">
-        {/* Top Section - Logo & Contact */}
+        {/* Top Section - Logo & Contact/Login */}
         <div className="container mx-auto px-6 lg:px-20 flex justify-between items-center py-2">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <Image src={logo} alt="School Logo" width={35} height={35} />
-            <h1 className="font-bold text-lg text-[#ff5959]">
-              LEVENMOUTH ACADEMY
-            </h1>
-          </div>
-
-          {/* Contact & Login (Visible on all screens now) */}
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-1">
-              <MdPhone className="text-[#ff5959] w-4 h-4" />
-              <span className="font-semibold text-xs">89562423934</span>
-            </div>
-            <Link href="/login">
-              <button className="bg-[#ff5959] text-white px-5 py-1.5 rounded-full text-xs font-semibold">
-                Login
-              </button>
+          {/* Left Section: Logo & Contact/Login (Stacked on mobile) */}
+          <div className="flex flex-col lg:flex-row lg:justify-between items-center w-full gap-2 lg:gap-4">
+            {/* Logo */}
+            <Link href="/">
+              <div className="flex items-center space-x-2">
+                <Image src={logo} alt="School Logo" width={35} height={35} />
+                <h1 className="font-bold text-lg text-[#ff5959] text-center lg:text-left">
+                  LEVENMOUTH ACADEMY
+                </h1>
+              </div>
             </Link>
+
+            {/* Contact & Login (Stacked on mobile) */}
+            <div className="flex flex-col lg:flex-row items-center gap-1 lg:gap-4">
+              <div className="flex items-center space-x-1">
+                <MdPhone className="text-[#ff5959] w-4 h-4" />
+                <span className="font-semibold text-xs">89562423934</span>
+              </div>
+              <Link href="/login">
+                <button className="bg-[#ff5959] text-white px-5 py-1.5 rounded-full text-xs font-semibold">
+                  Login
+                </button>
+              </Link>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -57,7 +63,7 @@ export default function MainNavbar() {
         {/* Bottom Section - Navigation Links */}
         <div className="border-t border-gray-200">
           <div className="container mx-auto px-6 lg:px-20">
-            {/* Desktop Navigation - Items now fit the screen */}
+            {/* Desktop Navigation */}
             <div className="hidden lg:flex justify-center space-x-4 py-2 text-xs font-medium">
               <NavLinks />
             </div>
@@ -65,9 +71,9 @@ export default function MainNavbar() {
             {/* Mobile Menu */}
             {menuOpen && (
               <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4">
-              {/* Mobile Navigation Links */}
-              <NavLinks mobile />
-            </div>
+                {/* Mobile Navigation Links */}
+                <NavLinks mobile />
+              </div>
             )}
           </div>
         </div>
