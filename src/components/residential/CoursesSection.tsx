@@ -1,6 +1,6 @@
-"use client";
+"use client"; // Ensures this runs only on the client
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import courseimg1 from "@/assets/couresimg1.png";
@@ -11,56 +11,34 @@ import courseimg5 from "@/assets/couresimg2.png";
 
 export default function CoursesSection() {
   const courses = [
-    {
-      id: 1,
-      image: courseimg1,
-      category: "Science",
-      title: "Mechanical Engineering",
-      description: "Explore the world of machines and innovation.",
-    },
-    {
-      id: 2,
-      image: courseimg2,
-      category: "Science",
-      title: "Civil Engineering",
-      description: "Learn how to design and build infrastructure.",
-    },
-    {
-      id: 3,
-      image: courseimg3,
-      category: "Business",
-      title: "Business Administration",
-      description: "Master management and entrepreneurship.",
-    },
-    {
-      id: 4,
-      image: courseimg4,
-      category: "Technology",
-      title: "Computer Science",
-      description: "Dive into software development and AI.",
-    },
-    {
-      id: 5,
-      image: courseimg5,
-      category: "Health",
-      title: "Nursing & Healthcare",
-      description: "Become a skilled healthcare professional.",
-    },
+    { id: 1, image: courseimg1, category: "Science", title: "Mechanical Engineering", description: "Explore the world of machines and innovation." },
+    { id: 2, image: courseimg2, category: "Science", title: "Civil Engineering", description: "Learn how to design and build infrastructure." },
+    { id: 3, image: courseimg3, category: "Business", title: "Business Administration", description: "Master management and entrepreneurship." },
+    { id: 4, image: courseimg4, category: "Technology", title: "Computer Science", description: "Dive into software development and AI." },
+    { id: 5, image: courseimg5, category: "Health", title: "Nursing & Healthcare", description: "Become a skilled healthcare professional." },
   ];
 
   const [startIndex, setStartIndex] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(1); // Default for mobile
 
-  // Determine number of items to show per screen size
-  const itemsPerPage = typeof window !== "undefined" && window.innerWidth >= 1024 ? 3 : 1;
-  
-  // Function to go to next set of items
+  useEffect(() => {
+    // Update itemsPerPage based on screen width
+    const updateItemsPerPage = () => {
+      setItemsPerPage(window.innerWidth >= 1024 ? 3 : 1);
+    };
+
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+    
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, []);
+
   const nextSlide = () => {
-    setStartIndex((prevIndex) => (prevIndex + 1) % courses.length);
+    setStartIndex((prev) => (prev + itemsPerPage) % courses.length);
   };
 
-  // Function to go to previous set of items
   const prevSlide = () => {
-    setStartIndex((prevIndex) => (prevIndex - 1 + courses.length) % courses.length);
+    setStartIndex((prev) => (prev - itemsPerPage + courses.length) % courses.length);
   };
 
   return (
@@ -82,7 +60,7 @@ export default function CoursesSection() {
             <ChevronLeft className="w-6 h-6 text-gray-700" />
           </button>
 
-          {/* Course Grid - Only showing limited items */}
+          {/* Course Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {courses.slice(startIndex, startIndex + itemsPerPage).map((course) => (
               <div
@@ -95,6 +73,7 @@ export default function CoursesSection() {
                     src={course.image}
                     alt={course.title}
                     className="w-full h-full object-cover transition-transform duration-500"
+                    priority
                   />
                 </div>
 

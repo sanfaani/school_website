@@ -17,9 +17,16 @@ export default function AboutSection() {
       {/* Header */}
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold">ABOUT US</h2>
-        <p className="text-gray-600 mt-2">
-          Tuse sem dolor, scelerem ipsurem eciust ven fuca nec orem scoi nodev
-          inviti onchina bret tzim.
+        <p className="text-gray-600 mt-2 text-justify">
+          FazCollege is a premier educational institution dedicated to
+          delivering academic excellence, innovative learning experiences, and
+          holistic student development. With a commitment to fostering
+          knowledge, critical thinking, and leadership skills, FazCollege
+          empowers students to excel academically and professionally. Our
+          experienced faculty, state-of-the-art facilities, and student-centered
+          approach create an environment where learners thrive. At FazCollege,
+          we don’t just educate; we inspire future leaders. “Nothing But
+          Excellence” is not just our motto—it’s our promise.
         </p>
       </div>
 
@@ -39,10 +46,13 @@ export default function AboutSection() {
 
         {/* Content */}
         <div>
-          <h3 className="text-2xl font-bold mb-4">WELCOME TO LEVENMOUTH</h3>
+          <h3 className="text-2xl font-bold mb-4 uppercase">
+            WELCOME TO FAZCOLLEGE
+          </h3>
           <p className="mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua
+            Discover a learning environment that fuels your dreams! At
+            Fazcollege, we combine innovation, academic excellence, and vibrant
+            campus life to prepare you for a future filled with possibilities.
           </p>
 
           <div className="space-y-3">

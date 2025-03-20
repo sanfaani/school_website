@@ -1,30 +1,64 @@
-import type React from "react";
+"use client";
+
+import { useState, useEffect } from "react";
 import { Book, GraduationCap, Users } from "lucide-react";
-import herobackground from "@/assets/heroimage.jpg";
+
+const heroImages = [
+  "/heroimages/fazhero.jpg",
+  "/heroimages/fazhero2.jpg",
+  "/heroimages/fazhero3.jpg",
+  "/heroimages/fazhero4.jpg",
+  "/heroimages/fazhero5.jpg",
+];
 
 export default function HeroSection() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isSliding, setIsSliding] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsSliding(true);
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+        setIsSliding(false);
+      }, 1000); // Wait for transition to complete before updating index
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="relative h-[600px] w-full overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${herobackground.src})`,
-          backgroundBlendMode: "overlay",
-          backgroundColor: "rgba(0, 0, 0, 0.4)",
-        }}
-      />
+      {/* Background Images */}
+      <div className="absolute inset-0">
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-1000 ease-in-out ${
+              index === currentImageIndex
+                ? "translate-x-0 opacity-100"
+                : isSliding
+                ? "translate-x-full opacity-0"
+                : "-translate-x-full opacity-0"
+            }`}
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundBlendMode: "overlay",
+              backgroundColor: "rgba(0, 0, 0, 0.4)",
+            }}
+          />
+        ))}
+      </div>
 
       {/* Content Overlay */}
       <div className="relative h-full container mx-auto px-4">
-        <div className="pt-20 text-white">
+        <div className="pt-20 md:pt-30 text-white">
           <p className="text-lg mb-2">DO YOU NEED ANY HELP?</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-4xl md:text-[60px] font-bold mb-6">
             WELCOME TO OUR
             <br />
             ACADEMY
           </h1>
-          {/* Adjusted margin-bottom for mobile */}
           <button className="py-2 px-4 rounded-full bg-[#ff5959] hover:bg-red-700 mb-12 sm:mb-6">
             Learn More
           </button>

@@ -8,7 +8,12 @@ import Testimonials from "@/components/residential/Testimonials";
 
 export default function HomePage() {
   return (
-    <div className="">
+    <>
+      {/* <head>
+        <title>Your Website Name</title>
+        <meta name="description" content="Your website description" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+      </head> */}
       <HeroSection />
       <ResidentialSection />
       <AboutSection />
@@ -16,6 +21,6 @@ export default function HomePage() {
       <Achievements />
       <StaffSection />
       <Testimonials />
-    </div>
+    </>
   );
 }

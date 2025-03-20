@@ -1,5 +1,6 @@
 # Levenmouth Academy Website
-
+<!-- https://demo.smart-school.in/ -->
+<!-- https://fazcollege.com/ -->
 A modern, responsive school management website built with **Next.js**, **Tailwind CSS**, and **React**.
 
 ## 🚀 Features
@@ -11,6 +12,20 @@ A modern, responsive school management website built with **Next.js**, **Tailwin
 
 ## 📂 File Structure
 ```
+
+DHL 
+Website: https://www.dhl.com/ng-en/home.html
+Contact: 0806 537 6485
+Location:  Inside NNPC Fuel Station, 42 Palm Avenue, Papa Ajao, Lagos 100253, 
+
+Lagos
+5245
+south west
+13637
+north, est and south south
+20980
+
+
 src/
 │-- app/
 │   ├── (auth)/guest

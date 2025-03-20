@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { MdPhone, MdMenu, MdClose } from "react-icons/md";
 import Image from "next/image";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/fazcollegeelogo.png";
 
 export default function MainNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,7 +25,7 @@ export default function MainNavbar() {
               <div className="flex items-center space-x-2">
                 <Image src={logo} alt="School Logo" width={35} height={35} />
                 <h1 className="font-bold text-lg text-[#ff5959] text-center lg:text-left">
-                  LEVENMOUTH ACADEMY
+                  Fazcollege
                 </h1>
               </div>
             </Link>
@@ -34,7 +34,7 @@ export default function MainNavbar() {
             <div className="flex flex-col lg:flex-row items-center gap-1 lg:gap-4">
               <div className="flex items-center space-x-1">
                 <MdPhone className="text-[#ff5959] w-4 h-4" />
-                <span className="font-semibold text-xs">89562423934</span>
+                <span className="font-semibold text-xs">+2348108842769</span>
               </div>
               <Link href="/login">
                 <button className="bg-[#ff5959] text-white px-5 py-1.5 rounded-full text-xs font-semibold">
