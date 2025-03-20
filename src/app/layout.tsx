@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from 'next/font/google'
 import "./globals.css";
 import Navbar from "@/components/nav/Navbar";
-// import Navbar from "@/components/nav/Navbar";
-
-// import Footer from "@/components/nav/Footer";
-// import ScrollToTop from "@/components/residential/ScrollToTop";
+import Footer from "@/components/nav/Footer";
+import ScrollToTop from "@/components/residential/ScrollToTop";
 
  
 // If loading a variable font, you don't need to specify the font weight
@@ -34,8 +32,8 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        {/* <ScrollToTop /> */}
-        {/* <Footer /> */}
+        <ScrollToTop />
+        <Footer />
       </body>
     </html>
   );

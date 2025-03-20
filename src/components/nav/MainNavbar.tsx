@@ -91,7 +91,7 @@ function NavLinks({ mobile = false }: { mobile?: boolean }) {
       <Link href="/" className={linkStyles}>
         Home
       </Link>
-      <Link href="/online-course" className={linkStyles}>
+      <Link href="/onlinecourse" className={linkStyles}>
         Online Course
       </Link>
       <Link href="/online-admission" className={linkStyles}>
