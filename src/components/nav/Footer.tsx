@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import footerimg from "@/assets/heroimage.jpg";
+import footerimg from "@/assets/fazhero.jpg";
 import {
   FaFacebookF,
   FaTwitter,
@@ -75,7 +75,7 @@ export default function Footer() {
           <MdPhone className="w-6 h-6" />
           <div className="border-l-2 pl-6">
             <h4 className="font-semibold">Contact</h4>
-            <p>+234 8038 32 938</p>
+            <p>+2348108842769</p>
           </div>
         </div>
 
@@ -83,7 +83,7 @@ export default function Footer() {
           <MdOutlineEmail className="w-6 h-6" />
           <div className="border-l-2 pl-6">
             <h4 className="font-semibold">Email Us</h4>
-            <p>levenmouth@gmail.com</p>
+            <p>contact@domain.com</p>
           </div>
         </div>
 
@@ -98,7 +98,7 @@ export default function Footer() {
 
       {/* Bottom Copyright Bar */}
       <div className="relative text-center bg-[#ff5959] py-3 mt-6">
-        © LEVENMOUTH ACADEMY School 2025 All rights reserved
+        © Fazcollege 2025 All rights reserved
       </div>
     </footer>
   );
