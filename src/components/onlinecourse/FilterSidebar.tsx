@@ -29,19 +29,19 @@ export default function FilterSidebar({
 
   return (
     <div className="w-full md:w-1/4 p-4 border-r border-gray-300">
-      <h2 className="text-lg font-semibold mb-4">Filter & Refine</h2>
+      <h2 className="text-lg font-semibold mb-4 text-black">Filter & Refine</h2>
 
       {/* Search */}
       <input
         type="text"
         placeholder="Enter Keyword..."
-        className="w-full border px-3 py-2 rounded-md mb-4"
+        className="w-full border border-gray-400 text-gray-400 px-3 py-2 rounded-md mb-4 "
         onChange={(e) => setSearch(e.target.value)}
       />
 
       {/* Category Filter */}
       <select
-        className="w-full border px-3 py-2 rounded-md mb-4"
+        className="w-full border px-3 py-2 rounded-md mb-4 border-gray-400 text-gray-400"
         onChange={(e) => setFilter(e.target.value)}
       >
         <option value="All">All Categories</option>
@@ -52,12 +52,12 @@ export default function FilterSidebar({
 
       {/* Price Range Filter */}
       <div className="mb-4">
-        <label className="font-medium">Price Range</label>
+        <label className="font-medium text-gray-500">Price Range </label>
         <div className="flex items-center space-x-2">
           <input
             type="number"
             placeholder="$ Min"
-            className="w-1/2 border px-3 py-2 rounded-md"
+            className="w-1/2 border px-3 py-2 rounded-md border-gray-400 text-gray-400"
             value={minPrice}
             onChange={(e) => setMinPrice(e.target.value)}
           />
@@ -65,7 +65,7 @@ export default function FilterSidebar({
           <input
             type="number"
             placeholder="$ Max"
-            className="w-1/2 border px-3 py-2 rounded-md"
+            className="w-1/2 border px-3 py-2 rounded-md border-gray-400 text-gray-400"
             value={maxPrice}
             onChange={(e) => setMaxPrice(e.target.value)}
           />
@@ -80,7 +80,7 @@ export default function FilterSidebar({
 
       {/* Sorting Options */}
       <select
-        className="w-full border px-3 py-2 rounded-md"
+        className="w-full border px-3 py-2 rounded-md border-gray-400 text-gray-400"
         onChange={(e) => setSortOption(e.target.value)}
       >
         <option value="price">Price</option>

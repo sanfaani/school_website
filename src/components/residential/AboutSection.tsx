@@ -16,7 +16,7 @@ export default function AboutSection() {
     <div className="containe mx-auto px-4 py-12 max-w-6xl">
       {/* Header */}
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold">ABOUT US</h2>
+        <h2 className="text-3xl font-bold text-black">ABOUT US</h2>
         <p className="text-gray-600 mt-2 text-justify">
           FazCollege is a premier educational institution dedicated to
           delivering academic excellence, innovative learning experiences, and
@@ -46,10 +46,10 @@ export default function AboutSection() {
 
         {/* Content */}
         <div>
-          <h3 className="text-2xl font-bold mb-4 uppercase">
+          <h3 className="text-2xl font-bold mb-4 uppercase text-black">
             WELCOME TO FAZCOLLEGE
           </h3>
-          <p className="mb-4">
+          <p className="mb-4 text-gray-600">
             Discover a learning environment that fuels your dreams! At
             Fazcollege, we combine innovation, academic excellence, and vibrant
             campus life to prepare you for a future filled with possibilities.

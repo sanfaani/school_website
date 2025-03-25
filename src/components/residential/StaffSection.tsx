@@ -50,7 +50,7 @@ export default function StaffSection() {
   return (
     <section className="container mx-auto px-6 lg:px-20 py-12 relative">
       {/* Header */}
-      <h2 className="text-center text-3xl font-bold mb-4">
+      <h2 className="text-center text-3xl font-bold mb-4 text-black">
         OUR EXPERIENCED STAFFS
       </h2>
       <p className="text-center text-gray-500 mb-10">

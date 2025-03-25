@@ -1,19 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google'
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/nav/Footer";
 import ScrollToTop from "@/components/residential/ScrollToTop";
 
- 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-})
-
-
-
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Fazcollege",
@@ -30,11 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={inter.className}
-      >
+      <body className={`${inter.className} bg-white text-black`}>
         <Navbar />
-        {children}
+        <main className="bg-white min-h-screen">{children}</main>
         <ScrollToTop />
         <Footer />
       </body>

@@ -34,7 +34,7 @@ export default function MainNavbar() {
             <div className="flex flex-col lg:flex-row items-center gap-1 lg:gap-4">
               <div className="flex items-center space-x-1">
                 <MdPhone className="text-[#ff5959] w-4 h-4" />
-                <span className="font-semibold text-xs">+2348108842769</span>
+                <span className="font-semibold text-md text-black">+2348108842769</span>
               </div>
               <Link href="/login">
                 <button className="bg-[#ff5959] text-white px-5 py-1.5 rounded-full text-xs font-semibold">

@@ -46,7 +46,7 @@ export default function CoursesSection() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-2">OUR MAIN COURSES</h2>
+          <h2 className="text-3xl font-bold mb-2 text-black">OUR MAIN COURSES</h2>
           <p className="text-gray-600">Discover courses designed for your success.</p>
         </div>
 
