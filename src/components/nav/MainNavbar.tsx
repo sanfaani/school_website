@@ -97,10 +97,10 @@ function NavLinks({ mobile = false }: { mobile?: boolean }) {
       <Link href="/admission" className={linkStyles}>
         Online Admission
       </Link>
-      <Link href="/cbse-exam-result" className={linkStyles}>
+      <Link href="/entranceexam" className={linkStyles}>
         Entrance Exam 
       </Link>
-      <Link href="/exam-result" className={linkStyles}>
+      <Link href="/examresult" className={linkStyles}>
         Exam Result
       </Link>
       <Link href="/annual-calendar" className={linkStyles}>
